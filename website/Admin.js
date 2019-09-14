@@ -56,7 +56,7 @@ function createUser() {
 			document.getElementById("orgEmail").value="";
 			document.getElementById("orgPass").value="";
 			document.getElementById("ownerName").value="";
-		firebase.database().ref("organizations/" + user.user.uid).set({
+		firebase.database().ref("disasters/" + user.user.uid).set({
 			name: name,
 			email: email,
 			owner_name: ownername
