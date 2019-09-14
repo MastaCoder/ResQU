@@ -73,6 +73,7 @@ function createUser() {
 			location: location,
 			Base_Camp_Location: bcLocation
 		});
+		toastr.success("Disaster made successfully");
 	}).catch(function (e) {
 		console.log("ERROR! " +
 			e.code + " " +

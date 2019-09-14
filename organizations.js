@@ -18,7 +18,8 @@ function createDrone(){
 		s+=Math.floor(Math.random() * 9) + 1;
 	}
 	writeDroneData(nickname, user.uid, s);
-	document.getElementById("nicknamea").value;
+	$("#nicknamea").val("");
+	toastr.success("Drone created successfully")
 }
 function writeDroneData(nickname, userId, droneId) {
 	firebase.database().ref('disasters/' + userId + '/drones/' + droneId).set({
@@ -43,6 +44,8 @@ function createUser(){
 		console.log(firebase.auth().currentUser);
 		firebase.database().ref("disasters/" + firebase.auth().currentUser.uid + "/volunteers").push(user.user.uid);
 		firebase.database().ref("users/" + user.user.uid).set(firebase.auth().currentUser.uid);
+		$("#userEmail").val("");
+		toastr.success("User made successfully");
 	}).catch(function (e) {
 		console.log("ERROR! " +
 			e.code + " " +

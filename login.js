@@ -13,7 +13,10 @@ window.onload = function() {
 function signInOrg() {
 	$("#wrong").slideUp();
     firebase.auth().signInWithEmailAndPassword(document.getElementById("orgEmail").value, document.getElementById("orgPass").value).then(function () {
-        window.location.replace('organizations.html');
+		toastr.success("Login validated, redirecting..");
+		setTimeout(function() {
+			window.location.replace('organizations.html');
+		}, 1000);
     }).catch(function (error) {
 		$("#wrong").slideDown();
         console.log("ERROR! " + error.code + " " + error.message);
