@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta charset="utf-8" />
+    <title>ResQU Checkin</title>
+</head>
+<body class="px-3">
+
+
+
+    <h1>Check in</h1>
+
+    <p>Name</p>
+    <input type="text" id="name" />
+    <p>Please indicate the number of each category of people:</p>
+    <div class="row">
+        <div>
+            <p>kids</p>
+            <input type="number" id="kids" />
+        </div>
+        <div>
+            <p>able bodied adults</p>
+            <input type="number" id="adults" />
+        </div>
+        <div>
+            <p>elderly/disabled/pregnant/other</p>
+            <input type="number" id="other" />
+        </div>
+    </div>
+    <p>Do you have an emergency?</p>
+    <input type="checkbox" id="emerg" />
+    <p>Please describe your current location? i.e. apartment number, floor, etc. </p>
+    <input type="text" id="loc" />
+    <p>What is the condition of your current shelter? Do you require immediate attention?</p>
+    <input type="text" id="condition" />
+    <p>Severity</p>
+    <p>Please indicate how urgent your need for evacuation is.</p>
+    <div class="row">
+        <p>0</p>
+        <input type="range" min="0" max="10" id="sev" />
+        <p>10</p>
+    </div>
+
+    
+    <select class="form-control" id="disaster_list">
+    </select>   
+
+    <div>
+        <button class="btn btn-warning" onclick="submit();">Submit</button>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
+    <script src="checkin.js"></script>
+</body>
+</html>
