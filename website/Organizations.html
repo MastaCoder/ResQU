@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Organizations</title>
+	<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
+	<script src="Organizations.js"></script>
+</head>
+<body>
+	<h1>Volunteer Creation</h1>
+	<form>
+		<fieldset>
+			<legend>Create a User</legend>
+			<p>
+				<label style="padding-right: 40px">Email: &nbsp;</label>
+				<input type = "text" id = "userEmail"/>
+			</p>
+			<button type="button" onclick="createUser()">Submit</button>
+		</fieldset>
+	</form>
+</body>
+<body>
+	<h1>Disaster Creation</h1>
+	<form>
+		<fieldset>
+			<legend>Create a Disaster</legend>
+			<p>
+				<label style="padding-right: 50px">Type of Disaster: </label>
+				<input type = "text" id = "disasterName" />
+			</p>
+			<p>
+				<label style="padding-right: 50px">Organization Name: </label>
+				<input type = "text" id = "dorgName" />
+			</p>
+			<p>
+				<label style="padding-right: 7.5px">Location: </label>
+				<input type = "text" id = "disasterLocation"/>
+			</p>
+			<p>
+				<label style="padding-right: 40px">Base Camp Location: &nbsp;</label>
+				<input type = "text" id = "bcLocation"/>
+			</p>
+			<button type="button" onclick="()">Submit</button>
+		</fieldset>
+	</form>
+</body>
+<body>
+	<h1>Drone Creation</h1>
+	<form>
+		<fieldset>
+			<legend>Drone</legend>
+			<p>
+				<label style="padding-right: 50px">Nickname: </label>
+				<input type = "text" id = "nicknamea" />
+			</p>
+			<button type="button" onclick="createDrone()">Submit</button>
+		</fieldset>
+	</form>
+</body>
+</html>
