@@ -49,6 +49,10 @@ function createUser() {
 		var name = document.getElementById("orgName").value;
 			var email = document.getElementById("orgEmail").value;
 			var ownername = document.getElementById("ownerName").value;
+			var disaster = document.getElementById("disasterName").value;
+			var orgName = document.getElementById("dorgName").value;
+			var location = document.getElementById("disasterLocation").value;
+			var bcLocation = document.getElementById("bcLocation").value;
 			if(email == null){
 				return;
 			}
@@ -56,10 +60,18 @@ function createUser() {
 			document.getElementById("orgEmail").value="";
 			document.getElementById("orgPass").value="";
 			document.getElementById("ownerName").value="";
+			document.getElementById("disasterName").value="";
+			document.getElementById("dorgName").value="";
+			document.getElementById("disasterLocation").value="";
+			document.getElementById("bcLocation").value="";
 		firebase.database().ref("disasters/" + user.user.uid).set({
 			name: name,
 			email: email,
-			owner_name: ownername
+			owner_name: ownername,
+			disaster_name: disaster,
+			org_name: orgName,
+			location: location,
+			Base_Camp_Location: bcLocation
 		});
 	}).catch(function (e) {
 		console.log("ERROR! " +
