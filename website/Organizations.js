@@ -21,7 +21,7 @@ function createDrone(){
 	document.getElementById("nicknamea").value;
 }
 function writeDroneData(nickname, userId, droneId) {
-	firebase.database().ref('organizations/' + userId + '/drones/' + droneId).set({
+	firebase.database().ref('disasters/' + userId + '/drones/' + droneId).set({
 		nickname: nickname,
 		active: false,
 		latitude: 0.1, 
@@ -41,7 +41,7 @@ function createUser(){
 	secondaryApp.auth().createUserWithEmailAndPassword(document.getElementById("userEmail").value, "123456").then(function (user) {
 		secondaryApp.auth().signOut();
 		console.log(firebase.auth().currentUser);
-		firebase.database().ref("organizations/" + firebase.auth().currentUser.uid + "/volunteers").push(user.user.uid);
+		firebase.database().ref("disasters/" + firebase.auth().currentUser.uid + "/volunteers").push(user.user.uid);
 		firebase.database().ref("users/" + user.user.uid).set(firebase.auth().currentUser.uid);
 	}).catch(function (e) {
 		console.log("ERROR! " +
@@ -52,7 +52,7 @@ function createUser(){
 function verifyLoggedIn() {
 	firebase.auth().onAuthStateChanged(function (user) {
 		if (user) {
-			if (firebase.database().ref('organizations/' + user.uid).once("value", function (created) {
+			if (firebase.database().ref('disasters/' + user.uid).once("value", function (created) {
 				if(created.val() == null) {
 					console.log('test');
 				} else {
