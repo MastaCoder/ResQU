@@ -9,12 +9,13 @@ window.onload = function() {
 	};
 	firebase.initializeApp(config);
 }
+
 function signInOrg() {
+	$("#wrong").slideUp();
     firebase.auth().signInWithEmailAndPassword(document.getElementById("orgEmail").value, document.getElementById("orgPass").value).then(function () {
         window.location.replace('organizations.html');
     }).catch(function (error) {
-        document.getElementById("error").style.display = "block";
-        document.getElementById("password").value = '';
+		$("#wrong").slideDown();
         console.log("ERROR! " + error.code + " " + error.message);
     });
 }
