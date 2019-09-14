@@ -19,7 +19,6 @@ function submit() {
     
     // convert factors into severity score
 
-
     firebase.database().ref("disasters/" + id + "/traps").push({
         name: document.getElementById("name").value,
         kids: document.getElementById("kids").value,
@@ -66,6 +65,7 @@ function loadDisasters() {
             optNum += 1;
         });
     });
+    $('.mdb-select').materialSelect();
 }
 
 
