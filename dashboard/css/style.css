@@ -39,6 +39,17 @@
     }
 }
 
+@media (max-width:780px) {
+    .sidebar-fixed {
+        display: none;
+    }
+    .card{
+        width: 600px;
+    }
+}
+
+
+
 h1, h2, h3, h4, h5, h6 {
     font-family: "Poppins", sans-serif;
 }
